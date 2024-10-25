@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="get_started">Get Started!</string>
+    <string name="onboarding_description">Welcome to our cozy coffee corner, where every cup is a delightful for you.</string>
+    <string name="onboarding_title">Fall in Love with Coffee in Blissful Delight!</string>
+</resources>

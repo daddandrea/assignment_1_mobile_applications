@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">La mia applicazione</string>
+    <string name="get_started">Inizia adesso!</string>
+    <string name="onboarding_description">Benvenuto all\'angolo del caffè, dove ogni tazza è perfetta per te.</string>
+    <string name="onboarding_title">Innamorati del caffe in Blissful Delight!</string>
+</resources>
