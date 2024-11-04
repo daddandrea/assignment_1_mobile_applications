@@ -3,4 +3,14 @@
     <string name="get_started">Get Started!</string>
     <string name="onboarding_description">Welcome to our cozy coffee corner, where every cup is a delightful for you.</string>
     <string name="onboarding_title">Fall in Love with Coffee in Blissful Delight!</string>
+    <string name="welcome_back">Welcome back</string>
+    <string name="sign_in_to_access_your_account">sign in to access your account</string>
+    <string name="password_hint">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="next"><![CDATA[Next >]]></string>
+    <string name="new_member">New member?</string>
+    <string name="register_now">Register Now</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="brand_logo">Brand Logo</string>
 </resources>

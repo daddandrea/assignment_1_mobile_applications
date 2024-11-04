@@ -4,4 +4,14 @@
     <string name="get_started">Inizia adesso!</string>
     <string name="onboarding_description">Benvenuto all\'angolo del caffè, dove ogni tazza è perfetta per te.</string>
     <string name="onboarding_title">Innamorati del caffe in Blissful Delight!</string>
+    <string name="welcome_back">Bentornato</string>
+    <string name="sign_in_to_access_your_account">Accedi al tuo account</string>
+    <string name="password_hint">Password</string>
+    <string name="remember_me">Ricordati di me</string>
+    <string name="forgot_password">Password dimenticata?</string>
+    <string name="next">Prosegui ></string>
+    <string name="new_member">Nuovo membro?</string>
+    <string name="register_now">Registrati</string>
+    <string name="enter_your_email">Inserisci la tua email</string>
+    <string name="brand_logo">Logo del brand</string>
 </resources>
