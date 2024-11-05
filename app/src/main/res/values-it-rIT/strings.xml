@@ -14,4 +14,12 @@
     <string name="register_now">Registrati</string>
     <string name="enter_your_email">Inserisci la tua email</string>
     <string name="brand_logo">Logo del brand</string>
+    <string name="by_creating_a_free_account">creando un account gratuito</string>
+    <string name="by_checking_the_box_you_agree_to_our_terms_and_conditions">Selezionando questa casella accetti i nostri Termini e Condizioni d\'Uso</string>
+    <string name="already_a_member">Hai già un account</string>
+    <string name="log_in">Accedi</string>
+    <string name="full_name">Nome</string>
+    <string name="valid_email">Email valida</string>
+    <string name="phone_number">Numero di telefono</string>
+    <string name="strong_password">Password complessa</string>
 </resources>
