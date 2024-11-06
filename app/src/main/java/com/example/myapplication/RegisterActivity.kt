@@ -11,7 +11,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        val loginLink: TextView = findViewById(R.id.register_now_link)
+        val loginLink: TextView = findViewById(R.id.login_now_link)
         loginLink.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)

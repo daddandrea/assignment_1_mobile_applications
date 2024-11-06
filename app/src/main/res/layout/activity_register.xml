@@ -173,7 +173,7 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/register_now_link"
+            android:id="@+id/login_now_link"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/login_new_member_text"
