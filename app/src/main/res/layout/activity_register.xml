@@ -149,7 +149,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginBottom="97dp"
         android:background="#6C63FF"
         android:text="@string/next"
@@ -158,7 +158,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="23dp"
+        android:layout_marginTop="3dp"
         android:paddingStart="72dp"
         android:paddingEnd="95dp"
         app:layout_constraintLeft_toLeftOf="parent"
