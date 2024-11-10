@@ -14,7 +14,9 @@ class RegisterActivity : AppCompatActivity() {
         val loginLink: TextView = findViewById(R.id.login_now_link)
         loginLink.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
+            finish()
         }
     }
 }
