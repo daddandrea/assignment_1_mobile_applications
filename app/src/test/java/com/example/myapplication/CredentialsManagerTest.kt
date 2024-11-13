@@ -44,4 +44,20 @@ class CredentialsManagerTest {
 
         assertTrue(result)
     }
+    @Test
+    fun givenEmptyPassword_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val password = ""
+        val result = credentialsManager.isPasswordValid(password)
+
+        assertFalse(result)
+    }
+    @Test
+    fun givenNotEmptyPassword_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val password = "1234"
+        val result = credentialsManager.isPasswordValid(password)
+
+        assertTrue(result)
+    }
 }
