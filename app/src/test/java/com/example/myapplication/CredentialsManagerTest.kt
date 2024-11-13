@@ -7,26 +7,41 @@ class CredentialsManagerTest {
     @Test
     fun givenEmptyEmail_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
-        assertEquals(false, credentialsManager.isEmailValid(""))
+        val email = ""
+        val result = credentialsManager.isEmailValid(email)
+
+        assertFalse(result)
     }
     @Test
     fun givenWrongEmailFormat_noAt_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
-        assertEquals(false, credentialsManager.isEmailValid("exampleemail.com"))
+        val email = "exampleemail.com"
+        val result = credentialsManager.isEmailValid(email)
+
+        assertFalse(result)
     }
     @Test
     fun givenWrongEmailFormat_noDot_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
-        assertEquals(false, credentialsManager.isEmailValid("example@emailcom"))
+        val email = "example@emailcom"
+        val result = credentialsManager.isEmailValid(email)
+
+        assertFalse(result)
     }
     @Test
     fun givenWrongEmailFormat_noDotAndNoAt_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
-        assertEquals(false, credentialsManager.isEmailValid("exampleemailcom"))
+        val email = "exampleemailcom"
+        val result = credentialsManager.isEmailValid(email)
+
+        assertFalse(result)
     }
     @Test
     fun givenProperEmailFormat_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
-        assertEquals(true, credentialsManager.isEmailValid("example@email.com"))
+        val email = "example@email.com"
+        val result = credentialsManager.isEmailValid(email)
+
+        assertTrue(result)
     }
 }
