@@ -10,6 +10,6 @@
         not empty -> success
 
     Login:
-        Successful login -> success
+        Successful login (test / 1234) -> success
         Wrong credentials -> error
         Connection timeout -> error

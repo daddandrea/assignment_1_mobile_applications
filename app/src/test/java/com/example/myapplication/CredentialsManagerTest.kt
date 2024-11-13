@@ -60,4 +60,22 @@ class CredentialsManagerTest {
 
         assertTrue(result)
     }
+    @Test
+    fun givenWrongCredentials_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val email = "not a user"
+        val password = "not a password"
+        val result = credentialsManager.login(email, password)
+
+        assertFalse(result)
+    }
+    @Test
+    fun givenRightCredentials_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val email = "test"
+        val password = "1234"
+        val result = credentialsManager.login(email, password)
+
+        assertTrue(result)
+    }
 }
