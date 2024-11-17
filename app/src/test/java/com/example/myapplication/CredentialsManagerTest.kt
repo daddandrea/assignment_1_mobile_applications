@@ -61,6 +61,15 @@ class CredentialsManagerTest {
         assertTrue(result)
     }
     @Test
+    fun givenEmptyCredentials_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val email = ""
+        val password = ""
+        val result = credentialsManager.login(email, password)
+
+        assertFalse(result)
+    }
+    @Test
     fun givenWrongCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
         val email = "not a user"
