@@ -61,7 +61,39 @@ class CredentialsManagerTest {
         assertTrue(result)
     }
     @Test
-    fun givenEmptyCredentials_thenReturnFalse() {
+    fun givenEmptyFullName_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val fullName = ""
+        val result = credentialsManager.isFullNameValid(fullName)
+
+        assertFalse(result)
+    }
+    @Test
+    fun givenNotEmptyFullName_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val fullName = "Andrea D'Addabbo"
+        val result = credentialsManager.isFullNameValid(fullName)
+
+        assertTrue(result)
+    }
+    @Test
+    fun givenEmptyPhoneNumber_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val phoneNumber = ""
+        val result = credentialsManager.isPhoneNumberValid(phoneNumber)
+
+        assertFalse(result)
+    }
+    @Test
+    fun givenNotEmptyPhoneNumber_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val phoneNumber = "3333333333"
+        val result = credentialsManager.isPhoneNumberValid(phoneNumber)
+
+        assertTrue(result)
+    }
+    @Test
+    fun login_givenEmptyCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
         val email = ""
         val password = ""
@@ -70,7 +102,7 @@ class CredentialsManagerTest {
         assertFalse(result)
     }
     @Test
-    fun givenWrongCredentials_thenReturnFalse() {
+    fun login_givenWrongCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
         val email = "not a user"
         val password = "not a password"
@@ -79,11 +111,44 @@ class CredentialsManagerTest {
         assertFalse(result)
     }
     @Test
-    fun givenRightCredentials_thenReturnTrue() {
+    fun login_givenRightCredentials_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
         val email = "test"
         val password = "1234"
         val result = credentialsManager.login(email, password)
+
+        assertTrue(result)
+    }
+    @Test
+    fun register_givenEmptyCredentials_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val fullName = ""
+        val email = ""
+        val phoneNumber = ""
+        val password = ""
+        val result = credentialsManager.register(fullName, phoneNumber, email, password)
+
+        assertFalse(result)
+    }
+    @Test
+    fun register_givenWrongCredentials_thenReturnFalse() {
+        val credentialsManager = CredentialsManager()
+        val fullName = "seffe"
+        val email = "fesff"
+        val phoneNumber = "fesef"
+        val password = "sefesfe"
+        val result = credentialsManager.register(fullName, phoneNumber, email, password)
+
+        assertFalse(result)
+    }
+    @Test
+    fun register_givenGoodCredentials_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val fullName = "seffe"
+        val email = "test"
+        val phoneNumber = "fesef"
+        val password = "1234"
+        val result = credentialsManager.register(fullName, phoneNumber, email, password)
 
         assertTrue(result)
     }

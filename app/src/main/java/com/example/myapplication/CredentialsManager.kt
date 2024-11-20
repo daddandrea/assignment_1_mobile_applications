@@ -15,7 +15,17 @@ class CredentialsManager {
     fun isPasswordValid(password: String): Boolean {
         return password.isNotEmpty()
     }
+    fun isFullNameValid(fullName: String): Boolean {
+        return fullName.isNotEmpty()
+    }
+    fun isPhoneNumberValid(phoneNumber: String): Boolean {
+        return phoneNumber.isNotEmpty()
+    }
     fun login(email: String, password: String): Boolean {
         return email == "test" && password == "1234"
     }
+    fun register(fullName: String, phoneNumber: String, email: String, password: String): Boolean {
+        return fullName.isNotEmpty() && phoneNumber.isNotEmpty() && email == "test" && password == "1234"
+    }
+
 }
