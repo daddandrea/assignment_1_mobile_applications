@@ -17,10 +17,10 @@ class LoginActivity : AppCompatActivity() {
         val emailInput: TextInputEditText = findViewById(R.id.login_email_input)
 
         val passwordInputLayout: TextInputLayout =
-            findViewById(R.id.register_password_input_layout)
+            findViewById(R.id.login_password_input_layout)
         val passwordInput: TextInputEditText = findViewById(R.id.register_password_input)
 
-        val loginButton: Button = findViewById(R.id.login_next_button)
+        val loginButton: Button = findViewById(R.id.register_next_button)
 
         val credentialsManager = CredentialsManager()
 
@@ -30,6 +30,9 @@ class LoginActivity : AppCompatActivity() {
             if (!credentialsManager.login(emailInput.text.toString(), passwordInput.text.toString())) {
                 emailInputLayout.error = "Please insert a valid email."
                 passwordInputLayout.error = "Please insert a valid password"
+            } else {
+                emailInputLayout.error = null
+                passwordInputLayout.error = null
             }
         }
 
