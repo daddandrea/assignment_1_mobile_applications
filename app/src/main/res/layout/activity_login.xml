@@ -60,7 +60,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/register_password_input_layout"
+        android:id="@+id/login_password_input_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="55dp"
@@ -89,8 +89,8 @@
         android:layout_height="12dp"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
-        app:layout_constraintLeft_toLeftOf="@id/register_password_input_layout"
-        app:layout_constraintTop_toBottomOf="@+id/register_password_input_layout" />
+        app:layout_constraintLeft_toLeftOf="@id/login_password_input_layout"
+        app:layout_constraintTop_toBottomOf="@+id/login_password_input_layout" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -109,11 +109,11 @@
         android:linksClickable="true"
         android:text="@string/forgot_password"
         android:textColor="#6C63FF"
-        app:layout_constraintRight_toRightOf="@id/register_password_input_layout"
+        app:layout_constraintRight_toRightOf="@id/login_password_input_layout"
         app:layout_constraintTop_toTopOf="@+id/remember_me_checkbox" />
 
     <Button
-        android:id="@+id/login_next_button"
+        android:id="@+id/register_next_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="30dp"
@@ -132,7 +132,7 @@
         android:paddingEnd="95dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_next_button">
+        app:layout_constraintTop_toBottomOf="@+id/register_next_button">
 
         <TextView
             android:id="@+id/login_new_member_text"
