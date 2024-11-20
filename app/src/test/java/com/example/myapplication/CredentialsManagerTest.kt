@@ -12,6 +12,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun givenWrongEmailFormat_noAt_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -20,6 +21,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun givenWrongEmailFormat_noDot_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -28,6 +30,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun givenWrongEmailFormat_noDotAndNoAt_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -36,6 +39,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun givenProperEmailFormat_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
@@ -44,6 +48,7 @@ class CredentialsManagerTest {
 
         assertTrue(result)
     }
+
     @Test
     fun givenEmptyPassword_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -52,6 +57,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun givenNotEmptyPassword_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
@@ -60,6 +66,7 @@ class CredentialsManagerTest {
 
         assertTrue(result)
     }
+
     @Test
     fun givenEmptyFullName_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -68,6 +75,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun givenNotEmptyFullName_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
@@ -76,6 +84,7 @@ class CredentialsManagerTest {
 
         assertTrue(result)
     }
+
     @Test
     fun givenEmptyPhoneNumber_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -84,6 +93,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun givenNotEmptyPhoneNumber_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
@@ -92,6 +102,7 @@ class CredentialsManagerTest {
 
         assertTrue(result)
     }
+
     @Test
     fun login_givenEmptyCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -101,6 +112,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun login_givenWrongCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -110,6 +122,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun login_givenRightCredentials_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
@@ -119,6 +132,7 @@ class CredentialsManagerTest {
 
         assertTrue(result)
     }
+
     @Test
     fun register_givenEmptyCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -130,6 +144,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun register_givenWrongCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -141,6 +156,7 @@ class CredentialsManagerTest {
 
         assertFalse(result)
     }
+
     @Test
     fun register_givenGoodCredentials_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
