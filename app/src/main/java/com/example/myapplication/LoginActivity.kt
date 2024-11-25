@@ -14,11 +14,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         val emailInputLayout: TextInputLayout = findViewById(R.id.login_email_input_layout)
-        val emailInput: TextInputEditText = findViewById(R.id.login_email_input)
+        var emailInput: TextInputEditText
 
-        val passwordInputLayout: TextInputLayout =
-            findViewById(R.id.login_password_input_layout)
-        val passwordInput: TextInputEditText = findViewById(R.id.register_password_input)
+        val passwordInputLayout: TextInputLayout = findViewById(R.id.login_password_input_layout)
+        var passwordInput: TextInputEditText
 
         val loginButton: Button = findViewById(R.id.register_next_button)
 
@@ -27,6 +26,13 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         loginButton.setOnClickListener {
+            /*
+                InputEditTexts should be initialized inside the listener so that the input can be different
+                each time
+             */
+            emailInput = findViewById(R.id.login_email_input)
+            passwordInput = findViewById(R.id.register_password_input)
+
             if (!credentialsManager.login(emailInput.text.toString(), passwordInput.text.toString())) {
                 emailInputLayout.error = "Please insert a valid email."
                 passwordInputLayout.error = "Please insert a valid password"
