@@ -26,10 +26,6 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         loginButton.setOnClickListener {
-            /*
-                InputEditTexts should be initialized inside the listener so that the input can be different
-                each time
-             */
             emailInput = findViewById(R.id.login_email_input)
             passwordInput = findViewById(R.id.register_password_input)
 

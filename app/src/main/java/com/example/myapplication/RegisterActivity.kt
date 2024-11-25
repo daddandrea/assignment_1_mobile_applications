@@ -30,10 +30,6 @@ class RegisterActivity : AppCompatActivity() {
         val credentialsManager = CredentialsManager()
 
         registerButton.setOnClickListener {
-            /*
-                InputEditTexts should be initialized inside the listener so that the input can be different
-                each time
-             */
             fullNameInput = findViewById(R.id.register_full_name_input)
             phoneNumberInput = findViewById(R.id.register_phone_number_input)
             emailInput = findViewById(R.id.register_valid_email_input)
