@@ -126,7 +126,7 @@ class CredentialsManagerTest {
     @Test
     fun login_givenRightCredentials_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
-        val email = "test"
+        val email = "test@te.st"
         val password = "1234"
         val result = credentialsManager.login(email, password)
 
@@ -161,7 +161,7 @@ class CredentialsManagerTest {
     fun register_givenGoodCredentials_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
         val fullName = "seffe"
-        val email = "test"
+        val email = "test@te.st"
         val phoneNumber = "fesef"
         val password = "1234"
         val result = credentialsManager.register(fullName, phoneNumber, email, password)
