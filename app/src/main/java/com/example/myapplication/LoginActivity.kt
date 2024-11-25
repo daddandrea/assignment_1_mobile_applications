@@ -29,12 +29,16 @@ class LoginActivity : AppCompatActivity() {
             emailInput = findViewById(R.id.login_email_input)
             passwordInput = findViewById(R.id.register_password_input)
 
-            if (!credentialsManager.login(emailInput.text.toString(), passwordInput.text.toString())) {
-                emailInputLayout.error = "Please insert a valid email."
-                passwordInputLayout.error = "Please insert a valid password"
-            } else {
-                emailInputLayout.error = null
-                passwordInputLayout.error = null
+            emailInputLayout.error =
+                if (!credentialsManager.isEmailValid(emailInput.text.toString())) "Please insert a valid email" else null
+            passwordInputLayout.error =
+                if (!credentialsManager.isPasswordValid(passwordInput.text.toString())) "Please insert a valid password" else null
+
+            if (credentialsManager.login(emailInput.text.toString(), passwordInput.text.toString())) {
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
             }
         }
 
