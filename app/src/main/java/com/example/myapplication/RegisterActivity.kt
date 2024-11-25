@@ -15,21 +15,30 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_register)
 
         val fullNameInputLayout: TextInputLayout = findViewById(R.id.register_full_name_input_layout)
-        val fullNameInput: TextInputEditText = findViewById(R.id.register_full_name_input)
+        var fullNameInput: TextInputEditText
 
         val phoneNumberInputLayout: TextInputLayout = findViewById(R.id.register_phone_number_input_layout)
-        val phoneNumberInput: TextInputEditText = findViewById(R.id.register_phone_number_input)
+        var phoneNumberInput: TextInputEditText
 
         val emailInputLayout: TextInputLayout = findViewById(R.id.register_valid_email_input_layout)
-        val emailInput: TextInputEditText = findViewById(R.id.register_valid_email_input)
+        var emailInput: TextInputEditText
 
         val passwordInputLayout: TextInputLayout = findViewById(R.id.register_password_input_layout)
-        val passwordInput: TextInputEditText = findViewById(R.id.register_password_input)
+        var passwordInput: TextInputEditText
 
         val registerButton: Button = findViewById(R.id.register_next_button)
         val credentialsManager = CredentialsManager()
 
         registerButton.setOnClickListener {
+            /*
+                InputEditTexts should be initialized inside the listener so that the input can be different
+                each time
+             */
+            fullNameInput = findViewById(R.id.register_full_name_input)
+            phoneNumberInput = findViewById(R.id.register_phone_number_input)
+            emailInput = findViewById(R.id.register_valid_email_input)
+            passwordInput = findViewById(R.id.register_password_input)
+
             if (credentialsManager.register(fullNameInput.text.toString(), phoneNumberInput.text.toString(), emailInput.text.toString(), passwordInput.text.toString())) {
                 fullNameInputLayout.error = "Please enter a name."
                 phoneNumberInputLayout.error = "Please enter a phone number."
