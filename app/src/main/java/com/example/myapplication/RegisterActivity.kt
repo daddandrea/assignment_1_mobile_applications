@@ -50,14 +50,20 @@ class RegisterActivity : AppCompatActivity() {
                     fullNameInput.text.toString(),
                     phoneNumberInput.text.toString(),
                     emailInput.text.toString(),
-                    passwordInput.text.toString()
-                )
-            ) {
-                emailInputLayout.error = null
-                val intent = Intent(this, LoginActivity::class.java)
-                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-                startActivity(intent)
-                finish()
+                    passwordInput.text.toString())) {
+                if(fullNameInputLayout.error == null &&
+                    phoneNumberInputLayout.error == null &&
+                    emailInputLayout.error == null &&
+                    passwordInputLayout.error == null) {
+
+                    emailInputLayout.error = null
+
+                    credentialsManager.saveRegister(emailInput.text.toString(), passwordInput.text.toString())
+                    val intent = Intent(this, LoginActivity::class.java)
+                    intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                    startActivity(intent)
+                    finish()
+                }
             } else {
                 emailInputLayout.error = "Email already exists"
             }

@@ -41,16 +41,14 @@ class CredentialsManager {
     }
 
     fun register(fullName: String, phoneNumber: String, email: String, password: String): Boolean {
-        if (fullName.isEmpty() || phoneNumber.isEmpty() || !isEmailValid(email) || !isPasswordValid(
-                password
-            )
-        ) return false
         if (credentials.containsKey(email.lowercase())) {
             return false
         } else {
-            credentials[email.lowercase()] = password
             return true
         }
     }
 
+    fun saveRegister(email: String, password: String) {
+        credentials[email.lowercase()] = password
+    }
 }
