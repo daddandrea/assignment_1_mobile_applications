@@ -1,8 +1,5 @@
 package com.example.myapplication
 
-import android.util.Log
-import java.util.Locale
-
 private const val DUMMY_EMAIL = "test@te.st"
 private const val DUMMY_PASSWORD = "1234"
 
