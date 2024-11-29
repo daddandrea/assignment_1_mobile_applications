@@ -53,10 +53,13 @@ class RegisterActivity : AppCompatActivity() {
                     passwordInput.text.toString()
                 )
             ) {
+                emailInputLayout.error = null
                 val intent = Intent(this, LoginActivity::class.java)
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent)
                 finish()
+            } else {
+                emailInputLayout.error = "Email already exists"
             }
         }
 

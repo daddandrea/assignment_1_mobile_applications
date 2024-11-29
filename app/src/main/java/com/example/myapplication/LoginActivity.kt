@@ -43,6 +43,8 @@ class LoginActivity : AppCompatActivity() {
                 intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
                 startActivity(intent)
                 finish()
+            } else {
+                loginButton.error = "Email or password are not right"
             }
         }
 
