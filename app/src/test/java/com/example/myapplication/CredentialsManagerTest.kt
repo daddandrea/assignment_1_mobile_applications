@@ -116,7 +116,7 @@ class CredentialsManagerTest {
     }
 
     @Test
-    fun login_givenWrongCredentials_thenReturnFalse() {
+    fun login_givenNotExistingCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
         val email = "not a user"
         val password = "not a password"
@@ -126,7 +126,7 @@ class CredentialsManagerTest {
     }
 
     @Test
-    fun login_givenRightCredentials_thenReturnTrue() {
+    fun login_givenExistingCredentials_thenReturnTrue() {
         val credentialsManager = CredentialsManager()
         val email = "test@te.st"
         val password = "1234"
@@ -160,7 +160,7 @@ class CredentialsManagerTest {
     }
 
     @Test
-    fun register_givenAlreadyExistingCredentials_thenReturnFalse() {
+    fun register_givenExistingCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
         val fullName = "seffe"
         val email = "test@te.st"

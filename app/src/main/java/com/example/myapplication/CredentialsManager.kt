@@ -40,7 +40,7 @@ class CredentialsManager {
     }
 
     fun login(email: String, password: String): Boolean {
-        return credentials.containsKey(email.lowercase())
+        return credentials.containsKey(email.lowercase()) && password == credentials[email]
     }
 
     fun register(fullName: String, phoneNumber: String, email: String, password: String): Boolean {
