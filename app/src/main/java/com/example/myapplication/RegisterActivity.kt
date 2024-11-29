@@ -45,6 +45,19 @@ class RegisterActivity : AppCompatActivity() {
                 if (!credentialsManager.isEmailValid(emailInput.text.toString())) "Please insert a valid email" else null
             passwordInputLayout.error =
                 if (!credentialsManager.isPasswordValid(passwordInput.text.toString())) "Please insert a valid password" else null
+
+            if (credentialsManager.register(
+                    fullNameInput.text.toString(),
+                    phoneNumberInput.text.toString(),
+                    emailInput.text.toString(),
+                    passwordInput.text.toString()
+                )
+            ) {
+                val intent = Intent(this, LoginActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(intent)
+                finish()
+            }
         }
 
         val loginLink: TextView = findViewById(R.id.login_now_link)
