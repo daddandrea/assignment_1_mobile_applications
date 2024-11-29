@@ -1,9 +1,11 @@
 package com.example.myapplication
 
 import org.junit.Test
+import org.junit.jupiter.api.AfterAll
 import org.junit.jupiter.api.Assertions.*
 
 class CredentialsManagerTest {
+
     @Test
     fun givenEmptyEmail_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
@@ -158,7 +160,7 @@ class CredentialsManagerTest {
     }
 
     @Test
-    fun register_givenGoodCredentials_thenReturnTrue() {
+    fun register_givenAlreadyExistingCredentials_thenReturnFalse() {
         val credentialsManager = CredentialsManager()
         val fullName = "seffe"
         val email = "test@te.st"
@@ -166,6 +168,27 @@ class CredentialsManagerTest {
         val password = "1234"
         val result = credentialsManager.register(fullName, phoneNumber, email, password)
 
+        assertFalse(result)
+    }
+
+    @Test
+    fun register_givenNewCredentials_thenReturnTrue() {
+        val credentialsManager = CredentialsManager()
+        val fullName = "seffe"
+        val email = "andrea.daddabbo@gmail.com"
+        val phoneNumber = "fesef"
+        val password = "1234"
+        val result = credentialsManager.register(fullName, phoneNumber, email, password)
+
         assertTrue(result)
+    }
+
+    companion object {
+        @JvmStatic
+        @AfterAll
+        fun clearCredentialsMap(): Unit {
+            val credentialsManager = CredentialsManager()
+            credentialsManager.clearCredentials()
+        }
     }
 }
