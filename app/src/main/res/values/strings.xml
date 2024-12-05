@@ -21,4 +21,7 @@
     <string name="valid_email">Valid email</string>
     <string name="phone_number">Phone number</string>
     <string name="strong_password">Strong password</string>
+    <string name="fragment_b" translatable="false">FragmentB</string>
+    <string name="fragment_a" translatable="false">FragmentA</string>
+    <string name="toggle_fragment">Toggle Fragment</string>
 </resources>

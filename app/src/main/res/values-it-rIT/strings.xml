@@ -22,4 +22,5 @@
     <string name="valid_email">Email valida</string>
     <string name="phone_number">Numero di telefono</string>
     <string name="strong_password">Password complessa</string>
+    <string name="toggle_fragment">Scambia Fragment</string>
 </resources>
