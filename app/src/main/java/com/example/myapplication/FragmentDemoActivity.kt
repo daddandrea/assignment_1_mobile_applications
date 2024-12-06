@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.ActivityFragmentsBinding
 
 class FragmentDemoActivity : AppCompatActivity() {
@@ -13,23 +14,22 @@ class FragmentDemoActivity : AppCompatActivity() {
         binding = ActivityFragmentsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container_view, FragmentA())
-                .commit()
-        }
+        if (savedInstanceState == null)
+            loadFragmentView(FragmentA())
 
         binding.fragmentToggleButton.setOnClickListener {
-            if (showingFragmentA) {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container_view, FragmentB())
-                    .commit()
-            } else {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container_view, FragmentA())
-                    .commit()
-            }
+            if (showingFragmentA)
+                loadFragmentView(FragmentB())
+            else
+                loadFragmentView(FragmentA())
+
             showingFragmentA = !showingFragmentA
         }
+    }
+
+    private fun loadFragmentView(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container_view, fragment)
+            .commit()
     }
 }
