@@ -18,4 +18,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:text="@string/toggle_fragment" />
 
+
 </androidx.constraintlayout.widget.ConstraintLayout>

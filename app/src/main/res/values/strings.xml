@@ -24,4 +24,6 @@
     <string name="fragment_b" translatable="false">FragmentB</string>
     <string name="fragment_a" translatable="false">FragmentA</string>
     <string name="toggle_fragment">Toggle Fragment</string>
+    <string name="navigate_to_fragment_b">Navigate to Fragment B</string>
+    <string name="navigate_to_fragment_a">Navigate to Fragment A</string>
 </resources>

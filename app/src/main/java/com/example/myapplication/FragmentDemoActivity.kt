@@ -1,11 +1,15 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.myapplication.databinding.ActivityFragmentsBinding
 
-class FragmentDemoActivity : AppCompatActivity() {
+class FragmentDemoActivity :
+    AppCompatActivity(R.layout.activity_fragments),
+    FragmentA.EventListener,
+    FragmentB.EventListener {
     private lateinit var binding: ActivityFragmentsBinding
     private var showingFragmentA = true
 
@@ -31,5 +35,13 @@ class FragmentDemoActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container_view, fragment)
             .commit()
+    }
+
+    override fun onGoToBPressed() {
+        Log.d("Preview", "onGoToBPressed in activity")
+    }
+
+    override fun onGoToAPressed() {
+        Log.d("Preview", "onGoToAPressed in activity")
     }
 }
