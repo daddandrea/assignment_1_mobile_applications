@@ -1,5 +1,10 @@
 package com.example.myapplication
 
+/*
+If statements should be added so that the user may know if an email is already taken
+or if the password is incorrect
+ */
+
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
