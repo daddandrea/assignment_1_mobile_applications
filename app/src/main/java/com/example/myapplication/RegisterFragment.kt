@@ -1,5 +1,9 @@
 package com.example.myapplication
 
+/*
+If statements should be added so that the user may know if an email has already been registered
+ */
+
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
