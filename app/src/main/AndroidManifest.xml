@@ -20,6 +20,10 @@
             android:name=".AuthenticationActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".RecipeDetailsActivity"
+            android:exported="true">
+        </activity>
     </application>
 
 </manifest>
