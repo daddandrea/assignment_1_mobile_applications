@@ -7,10 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
 class RecipeAdapter(
-    private val recipes: List<Recipe>,
+    private var recipes: List<Recipe>,
     private val onItemClick: (Recipe) -> Unit,
     private val onActionClick: (Recipe, String) -> Unit,
     private val likedItems: MutableSet<Int> = mutableSetOf<Int>()
@@ -65,6 +66,24 @@ class RecipeAdapter(
 
     override fun getItemCount(): Int {
         return recipes.size
+    }
+
+    fun updateRecipes(newRecipes: List<Recipe>) {
+        val diffCallBack = object : DiffUtil.Callback() {
+            override fun getOldListSize(): Int = recipes.size
+            override fun getNewListSize(): Int = newRecipes.size
+
+            override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                return recipes[oldItemPosition].id == newRecipes[newItemPosition].id
+            }
+
+            override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+                return recipes[oldItemPosition] == newRecipes[newItemPosition]
+            }
+        }
+        val diffResult = DiffUtil.calculateDiff(diffCallBack)
+        recipes = newRecipes
+        diffResult.dispatchUpdatesTo(this)
     }
 
 }
