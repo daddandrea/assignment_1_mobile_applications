@@ -8,7 +8,8 @@ import com.example.myapplication.databinding.ActivityAuthenticationBinding
 
 class AuthenticationActivity : AppCompatActivity(R.layout.activity_authentication) {
     private lateinit var binding: ActivityAuthenticationBinding
-    private val credentialsManager = CredentialsManager()
+    private val credentialsManager: CredentialsManager
+        get() = MyApplication.getInstance().credentialsManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
