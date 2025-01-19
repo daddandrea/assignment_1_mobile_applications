@@ -26,4 +26,5 @@
     <string name="toggle_fragment">Toggle Fragment</string>
     <string name="navigate_to_fragment_b">Navigate to Fragment B</string>
     <string name="navigate_to_fragment_a">Navigate to Fragment A</string>
+    <string name="menu_settings">Menu settings</string>
 </resources>
