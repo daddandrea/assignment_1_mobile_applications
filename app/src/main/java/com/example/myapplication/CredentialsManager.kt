@@ -1,6 +1,9 @@
 package com.example.myapplication
 
 import android.util.Log
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 
 private const val DUMMY_EMAIL = "test@te.st"
 private const val DUMMY_PASSWORD = "1234"
@@ -15,6 +18,8 @@ class CredentialsManager {
             ")+")
 
     private val credentials = hashMapOf(Pair(DUMMY_EMAIL, DUMMY_PASSWORD))
+    private val _isLoggedIn = MutableStateFlow(false)
+    val isLoggedIn: StateFlow<Boolean> = _isLoggedIn.asStateFlow()
 
     fun clearCredentials() {
         val initialCredentials = hashMapOf(Pair(DUMMY_EMAIL, DUMMY_PASSWORD))
@@ -45,7 +50,9 @@ class CredentialsManager {
     }
 
     fun login(email: String, password: String): Boolean {
-        return credentials[email.lowercase()] == password
+        val loginSuccess = credentials[email.lowercase()] == password
+        if (loginSuccess) { _isLoggedIn.value = true }
+        return loginSuccess
     }
 
     fun register(fullName: String, phoneNumber: String, email: String, password: String): Boolean {
@@ -61,4 +68,7 @@ class CredentialsManager {
         }
     }
 
+    fun logout() {
+        _isLoggedIn.value = false
+    }
 }
